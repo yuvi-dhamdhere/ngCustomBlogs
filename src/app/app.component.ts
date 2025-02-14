@@ -13,8 +13,8 @@ export class AppComponent {
   title = 'AngularApp for Blogs';
   
   constructor(private _serviceObj: CustomServiceService){
-    // _serviceObj.getExternalData().subscribe(data=>{
-    //   console.log("External Data: "+ data)
-    // });
+    _serviceObj.getExternalData().subscribe(data=>{
+      console.log("External Data: "+ data)
+    });
   }
 }
