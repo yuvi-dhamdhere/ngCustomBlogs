@@ -1,7 +1,17 @@
-{{ title }}
-<!-- <app-my-blogs></app-my-blogs> -->
-<!-- <ul>
-<a [routerLink]="'/blogs'">My Blogs</a>
-<a [routerLink]="'/about'">About Us</a>
-</ul> -->
+<div class="container">
+    <div class="header col-md-12">
+        <div class="headText" >{{ title }} </div>
+        <div class="Menu row col-md-12">
+            <div class="col-md-4"><a [routerLink]="'/blogs'">My Blogs</a></div>
+            <div class="col-md-4"><a [routerLink]="'/AddBlog'">Add Blogs</a></div>
+            <!-- <div class="col-md-4"><a [routerLink]="'/login'">Login</a></div> -->
+        </div>
+    </div>
 <router-outlet />
+
+<div class=" col-md-12">
+    <div class="headText col-md-12">
+        Blogs Footer
+    </div>
+</div>
+</div>

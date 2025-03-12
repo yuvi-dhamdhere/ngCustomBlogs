@@ -1,1 +1,44 @@
-<p>my-blogs works!</p>
+@if (tblData1 == null) {
+<div class="alert alert-warning text-center" role="alert">
+  Check your internet connection.
+</div>
+}
+@else if (tblData1.length == 0) {
+<div class="alert alert-warning text-center" role="alert">
+  No Blogs Found.
+</div>
+}
+@else{
+<div class="col-md-12">
+  @for (item of tblData1; track item) {
+  <div class="card mb-3" style="max-width: auto;">
+    <div class="row no-gutters">
+      <!-- <div class="col-md-4">
+                <img src="../../favicon.ico" class="card-img" alt="{{item.image}}">
+              </div> -->
+      <div class="col-md-12">
+        <div class="card-body">
+          <h5 class="card-title">{{item.blogTitle}} &nbsp;- On &nbsp;<span class="badge text-bg-primary">{{item.blogId}}</span></h5>
+          <p class="card-text">{{item.blogDescription}}</p>
+          <p class="card-text">{{item.blogContent}}</p>
+
+          <div class="card-foot row col-md-12">
+            <p class="card-text col-md-6">
+              <small class="text-muted">
+                <a href="#" class="btn btn-primary" [routerLink]="'/viewblog/'+item.blogId">Read More...</a></small>
+            </p>
+            <p class="card-text image col-md-6">
+              <small class="text-muted">
+                <a href="#" class="btn btn-primary" (click)="deleteBlog(item.blogId)">
+                  <img src="../../assets/images/deleteIcon.jpg" class="card-img" alt="{{item.image}}">
+                  Remove Blog</a></small>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <br />
+  }
+</div>
+}

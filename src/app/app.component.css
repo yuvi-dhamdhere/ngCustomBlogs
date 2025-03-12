@@ -1,0 +1,25 @@
+.container{
+    background-color: azure;
+}
+.headText{
+    background-color: rgb(188, 222, 241); 
+    height: 30px;
+    font-size: 20px; color: blueviolet;
+    padding-left: 10px;
+}
+.Menu{
+    background-color: rgb(233, 119, 119); font-weight: 600;   
+    margin: 0 0 10px 0; 
+    div{
+        width: 15%;
+        background-color: rgb(63, 62, 62);
+    }
+    div a{
+        text-decoration: none;
+        color: beige;
+    }
+    div a:hover{
+        text-decoration: underline;
+        color: beige;
+    }
+}
