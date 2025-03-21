@@ -1,16 +1,33 @@
-@if (tblData1 == null) {
+<div class="col-md-12" style="padding-bottom: 10px;">
+  <form action="https://www.google.com/search" class="searchform" method="get" name="searchform" target="_blank">
+    <table style="width: 100%;">
+      <tr>
+        <td style="width: 20%;"></td>
+        <td style="width: 40%;"><input name="sitesearch" type="hidden" value="google.com">
+          <input autocomplete="on" class="form-control search" name="q" placeholder="Search in Google.com"
+            required="required" type="text">
+        </td>
+        <td style="width: 30%; padding-left: 10px;">
+          <div><button class="button"  style="border-radius: 10px;" type="submit">Search Info</button></div>
+        </td>
+        <td style="width: 10%;"></td>
+      </tr>
+    </table>
+  </form>
+</div>
+@if (blogList == null) {
 <div class="alert alert-warning text-center" role="alert">
   Check your internet connection.
 </div>
 }
-@else if (tblData1.length == 0) {
+@else if (blogList.length == 0) {
 <div class="alert alert-warning text-center" role="alert">
   No Blogs Found.
 </div>
 }
 @else{
 <div class="col-md-12">
-  @for (item of tblData1; track item) {
+  @for (item of blogList; track item) {
   <div class="card mb-3" style="max-width: auto;">
     <div class="row no-gutters">
       <!-- <div class="col-md-4">
@@ -18,20 +35,26 @@
               </div> -->
       <div class="col-md-12">
         <div class="card-body">
-          <h5 class="card-title">{{item.blogTitle}} &nbsp;- On &nbsp;<span class="badge text-bg-primary">{{item.blogId}}</span></h5>
+          <h5 class="card-title">{{item.blogTitle}} &nbsp;- On &nbsp;<span
+              class="badge text-bg-success">{{item.blogId}}</span></h5>
           <p class="card-text">{{item.blogDescription}}</p>
           <p class="card-text">{{item.blogContent}}</p>
 
-          <div class="card-foot row col-md-12">
-            <p class="card-text col-md-6">
+          <div class="card-foot row">
+            <p class="card-text col-md-6 col-sm-6">
               <small class="text-muted">
                 <a href="#" class="btn btn-primary" [routerLink]="'/viewblog/'+item.blogId">Read More...</a></small>
             </p>
-            <p class="card-text image col-md-6">
+            <p class="card-text image col-md-6 col-sm-6" >
               <small class="text-muted">
-                <a href="#" class="btn btn-primary" (click)="deleteBlog(item.blogId)">
+                <a href="#" class="btn btn-primary d-md-none" (click)="deleteBlog(item.blogId)" title="Delete Blog" aria-label="Delete Blog">
                   <img src="../../assets/images/deleteIcon.jpg" class="card-img" alt="{{item.image}}">
-                  Remove Blog</a></small>
+                </a>
+                  <a href="#" class="btn btn-primary d-sm-none d-md-block" (click)="deleteBlog(item.blogId)" title="Delete Blog" aria-label="Delete Blog">
+                    <img src="../../assets/images/deleteIcon.jpg" class="card-img2" alt="{{item.image}}">&nbsp;
+                    Remove Blog
+                  </a>
+              </small>
             </p>
           </div>
         </div>
