@@ -36,7 +36,7 @@
       <div class="col-md-12">
         <div class="card-body">
           <h5 class="card-title">{{item.blogTitle}} &nbsp;- On &nbsp;<span
-              class="badge text-bg-success">{{item.blogId}}</span></h5>
+              class="badge text-bg-success">{{item.category}}</span></h5>
           <p class="card-text">{{item.blogDescription}}</p>
           <p class="card-text">{{item.blogContent}}</p>
 
@@ -47,11 +47,11 @@
             </p>
             <p class="card-text image col-md-6 col-sm-6" >
               <small class="text-muted">
-                <a href="#" class="btn btn-primary d-md-none" (click)="deleteBlog(item.blogId)" title="Delete Blog" aria-label="Delete Blog">
-                  <img src="../../assets/images/deleteIcon.jpg" class="card-img" alt="{{item.image}}">
+                <a href="#" class="btn btn-primary d-md-none d-sm-block" (click)="deleteBlog(item.blogId)" title="Delete Blog" aria-label="Delete Blog">
+                  <img src="{{imageURL}}" class="card-img" alt="{{item.image}}">
                 </a>
-                  <a href="#" class="btn btn-primary d-sm-none d-md-block" (click)="deleteBlog(item.blogId)" title="Delete Blog" aria-label="Delete Blog">
-                    <img src="../../assets/images/deleteIcon.jpg" class="card-img2" alt="{{item.image}}">&nbsp;
+                  <a href="#" class="btn btn-primary d-sm-none d-none d-md-block" (click)="deleteBlog(item.blogId)" title="Delete Blog" aria-label="Delete Blog">
+                    <img src="{{imageURL}}" class="card-img2" alt="{{item.image}}">&nbsp;
                     Remove Blog
                   </a>
               </small>

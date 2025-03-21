@@ -11,13 +11,14 @@ import { ActivatedRoute, RouterLink } from '@angular/router';
 })
 export class ViewBlogComponent implements OnInit{
   route=inject(ActivatedRoute);
-  tblData1: any; 
+  viewBlog: any; 
   constructor(private _serviceObj: CustomServiceService){}
 
   ngOnInit(){
     let id = this.route.snapshot.params['id'];
     this._serviceObj.getBlogsbyId(id).subscribe(data=>{
-      this.tblData1 = data;
+      this.viewBlog = data;
+      //console.log(this.viewBlog);
     });
   }
 }

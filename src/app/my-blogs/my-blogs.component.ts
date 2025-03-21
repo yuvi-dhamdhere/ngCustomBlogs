@@ -14,13 +14,14 @@ export class MyBlogsComponent implements OnInit {
 
   blogList: any = []; catagoryList: any = [];
   categories: any = []; // Array to hold categories
+  imageURL: any = "../../assets/images/deleteIcon.jpg"
   constructor(private _serviceObj: CustomServiceService,
     private router: Router){}
 
   ngOnInit(){
     //let id = this.router.snapshot.params['id'];
     //this.loadCategories();
-    this._serviceObj.getAllBlogsData().subscribe(data=>{
+    this._serviceObj.getAllBlogswithCat().subscribe(data=>{
       this.blogList = data;
       //console.log(this.blogList);
     });
@@ -28,7 +29,7 @@ export class MyBlogsComponent implements OnInit {
       this.catagoryList = data;
       //console.log(this.catagoryList);
     });
-    window.setTimeout(this.getCategoryName, 2000);
+    //window.setTimeout(this.getCategoryName, 2000);
   }
 
   getCategoryName(){

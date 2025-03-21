@@ -6,4 +6,5 @@ export interface blog{
     image: string;
     isFeatured: boolean;
     categoryId: number;
+    category: string;
 }

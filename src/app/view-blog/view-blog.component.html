@@ -2,13 +2,14 @@
     <div class="card mb-3" style="max-width: auto;">
         <div class="row no-gutters">
           <!-- <div class="col-md-4">
-            <img src="../../favicon.ico" class="card-img" alt="{{tblData1.image}}">
+            <img src="../../favicon.ico" class="card-img" alt="{{viewBlog.image}}">
           </div> -->
           <div class="col-md-12">
             <div class="card-body">
-              <h5 class="card-title">{{tblData1.blogTitle}}</h5>
-              <p class="card-text">{{tblData1.blogDescription}}</p>
-              <p class="card-text">{{tblData1.blogContent}}</p>
+              <h5 class="card-title">{{viewBlog[0]?.blogTitle}}&nbsp;<span
+                class="badge text-bg-success">{{viewBlog[0]?.category}}</span></h5>
+              <p class="card-text">{{viewBlog[0]?.blogDescription}}</p>
+              <p class="card-text">{{viewBlog[0]?.blogContent}}</p>
               <p class="card-text"><small class="text-muted">
                 <a href="#" class="btn btn-primary" [routerLink]="'/blogs'">All Blogs</a></small>
               </p>

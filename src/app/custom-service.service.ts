@@ -22,6 +22,9 @@ export class CustomServiceService {
   getAllBlogsData() : Observable<Object>{
     return this._httpClient.get<blog[]>("http://"+this.globalServer+"/api/Blog");
   }
+  getAllBlogswithCat() : Observable<Object>{
+    return this._httpClient.get<blog[]>("http://"+this.globalServer+"/api/Blog");
+  }
   getBlogsbyId(id : number) : Observable<Object>{
     return this._httpClient.get<blog[]>("http://"+this.globalServer+"/api/Blog/"+ id);
   }
